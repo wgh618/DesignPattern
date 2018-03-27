@@ -1,4 +1,4 @@
-package com.will.designpattern.factory.SimpleFactory;
+package com.will.designPattern.factory.simpleFactory;
 
 /**
  * ClassName:Shape

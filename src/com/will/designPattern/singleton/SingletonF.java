@@ -1,4 +1,4 @@
-package com.will.designpattern.singleton;
+package com.will.designPattern.singleton;
 
 /**
  * ClassName:SingletonF
