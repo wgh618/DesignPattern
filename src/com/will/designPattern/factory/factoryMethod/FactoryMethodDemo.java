@@ -1,10 +1,5 @@
 package com.will.designPattern.factory.factoryMethod;
 
-import com.will.designPattern.factory.simpleFactory.Circle;
-import com.will.designPattern.factory.simpleFactory.Rectangle;
-import com.will.designPattern.factory.simpleFactory.ShapeFactory;
-import com.will.designPattern.factory.simpleFactory.Square;
-
 /**
  * ClassName:FactoryMethodDemo
  * Description:测试类
