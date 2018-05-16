@@ -1,4 +1,4 @@
-package com.will.headFirstDesignPattern.strategyPattern.behavior;
+package com.will.headFirstDesignPattern.strategy.behavior;
 
 /**
  * ClassName:QuackBehavior
@@ -9,5 +9,8 @@ package com.will.headFirstDesignPattern.strategyPattern.behavior;
  * @date 2018年05月15日
  */
 public interface QuackBehavior {
+    /**
+     * 叫
+     */
     void quack();
 }

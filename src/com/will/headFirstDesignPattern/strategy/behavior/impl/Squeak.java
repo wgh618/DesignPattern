@@ -1,6 +1,6 @@
-package com.will.headFirstDesignPattern.strategyPattern.behavior.impl;
+package com.will.headFirstDesignPattern.strategy.behavior.impl;
 
-import com.will.headFirstDesignPattern.strategyPattern.behavior.QuackBehavior;
+import com.will.headFirstDesignPattern.strategy.behavior.QuackBehavior;
 
 /**
  * ClassName:Squeak

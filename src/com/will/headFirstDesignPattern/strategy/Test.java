@@ -1,7 +1,7 @@
-package com.will.headFirstDesignPattern.strategyPattern;
+package com.will.headFirstDesignPattern.strategy;
 
-import com.will.headFirstDesignPattern.strategyPattern.behavior.impl.FlyWithWings;
-import com.will.headFirstDesignPattern.strategyPattern.behavior.impl.Squeak;
+import com.will.headFirstDesignPattern.strategy.behavior.impl.FlyWithWings;
+import com.will.headFirstDesignPattern.strategy.behavior.impl.Squeak;
 
 /**
  * ClassName:Test

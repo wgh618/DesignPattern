@@ -1,4 +1,4 @@
-package com.will.headFirstDesignPattern.strategyPattern;
+package com.will.headFirstDesignPattern.strategy;
 
 /**
  * ClassName:MallardDuck

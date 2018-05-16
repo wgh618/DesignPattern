@@ -1,7 +1,7 @@
-package com.will.headFirstDesignPattern.strategyPattern;
+package com.will.headFirstDesignPattern.strategy;
 
-import com.will.headFirstDesignPattern.strategyPattern.behavior.FlyBehavior;
-import com.will.headFirstDesignPattern.strategyPattern.behavior.QuackBehavior;
+import com.will.headFirstDesignPattern.strategy.behavior.FlyBehavior;
+import com.will.headFirstDesignPattern.strategy.behavior.QuackBehavior;
 
 /**
  * ClassName:Duck
