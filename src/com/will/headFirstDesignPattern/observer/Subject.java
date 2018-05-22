@@ -11,16 +11,19 @@ package com.will.headFirstDesignPattern.observer;
 public interface Subject {
     /**
      * 注册为观察者
+     *
+     * @param observer 观察者
      */
-    void registerObserver();
+    void registerObserver(Observer observer);
 
     /**
      * 从观察者中删除
+     * * @param observer 观察者
      */
-    void removeObserver();
+    void removeObserver(Observer observer);
 
     /**
      * 通知观察者
      */
-    void notifyObserver();
+    void notifyObservers();
 }
