@@ -1,6 +1,8 @@
-package com.will.headFirstDesignPattern.observer;
+package com.will.headFirstDesignPattern.observer.java;
 
-import sun.plugin.viewer.context.AxBridgeAppletContext;
+
+import java.util.Observable;
+import java.util.Observer;
 
 /**
  * ClassName:StatisticsDisplay
@@ -12,23 +14,27 @@ import sun.plugin.viewer.context.AxBridgeAppletContext;
  */
 public class StatisticsDisplay implements Observer, DisplayElement {
     private float temperature;
-    private Subject weatherData;
+    private Observable observable;
 
     private static float avg;
     private static float max;
     private static float min;
     private static int count;
 
-    public StatisticsDisplay(Subject weatherData) {
-        this.weatherData = weatherData;
-        weatherData.registerObserver(this);
+    public StatisticsDisplay(Observable observable) {
+        this.observable = observable;
+        observable.addObserver(this);
     }
 
     @Override
-    public void update(float temperature, float humidity, float pressure) {
-        this.temperature = temperature;
-        display();
+    public void update(Observable o, Object arg) {
+        if (o instanceof WeatherData) {
+            WeatherData weatherData = (WeatherData) o;
+            this.temperature = weatherData.getTemperature();
+            display();
+        }
     }
+
 
     /**
      * 显示

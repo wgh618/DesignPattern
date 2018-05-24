@@ -1,4 +1,4 @@
-package com.will.headFirstDesignPattern.observer;
+package com.will.headFirstDesignPattern.observer.self;
 
 /**
  * ClassName:DisplayElement

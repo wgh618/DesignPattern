@@ -1,4 +1,4 @@
-package com.will.headFirstDesignPattern.observer;
+package com.will.headFirstDesignPattern.observer.self;
 
 import java.util.ArrayList;
 import java.util.List;
