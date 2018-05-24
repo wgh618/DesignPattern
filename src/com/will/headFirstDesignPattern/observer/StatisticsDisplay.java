@@ -1,5 +1,7 @@
 package com.will.headFirstDesignPattern.observer;
 
+import sun.plugin.viewer.context.AxBridgeAppletContext;
+
 /**
  * ClassName:StatisticsDisplay
  * Description: 此布告板跟踪最小、平均、最大的观测值
@@ -10,8 +12,12 @@ package com.will.headFirstDesignPattern.observer;
  */
 public class StatisticsDisplay implements Observer, DisplayElement {
     private float temperature;
-    private float humidity;
     private Subject weatherData;
+
+    private static float avg;
+    private static float max;
+    private static float min;
+    private static int count;
 
     public StatisticsDisplay(Subject weatherData) {
         this.weatherData = weatherData;
@@ -21,7 +27,6 @@ public class StatisticsDisplay implements Observer, DisplayElement {
     @Override
     public void update(float temperature, float humidity, float pressure) {
         this.temperature = temperature;
-        this.humidity = humidity;
         display();
     }
 
@@ -30,7 +35,20 @@ public class StatisticsDisplay implements Observer, DisplayElement {
      */
     @Override
     public void display() {
-        System.out.println("Current conditions: " + temperature
-                + "F degrees and " + humidity + "% humidity");
+        if (count == 0) {
+            min = temperature;
+        } else {
+            if (temperature < min) {
+                min = temperature;
+            }
+        }
+
+        if (temperature > max) {
+            max = temperature;
+        }
+
+        avg = (avg * count + temperature) /(count + 1);
+        System.out.println("Avg/Max/Min temperature = " + avg + "/" + max + "/" + min);
+        count ++;
     }
 }
