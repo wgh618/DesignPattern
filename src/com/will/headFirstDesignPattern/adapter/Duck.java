@@ -1,13 +1,14 @@
 package com.will.headFirstDesignPattern.adapter;
 
 /**
- * ClassName:Target
+ * ClassName:Duck
  * Description:
  *
  * @author Will Wu
  * @email willwu618@gmail.com
  * @date 2018年06月04日
  */
-public interface Target {
-    void request();
+public interface Duck {
+    void quack();
+    void fly();
 }
