@@ -1,7 +1,5 @@
 package com.will.headFirstDesignPattern.iterator;
 
-import java.util.List;
-
 /**
  * ClassName:DinnerMenu
  * Description:
@@ -16,10 +14,11 @@ public class DinnerMenu {
     private MenuItem[] menuItems;
 
     public DinnerMenu() {
+        menuItems = new MenuItem[Max_ITEMS];
         addItem("Vegetarian BLT","",true,2.99);
         addItem("BLT","",false,2.99);
         addItem("Soup of the day","",false,3.29);
-        addItem("hotdog","",false,3.05);
+        addItem("hot dog","",false,3.05);
     }
 
     private void addItem(String name, String description, Boolean vegetarian, Double prise) {
@@ -33,7 +32,7 @@ public class DinnerMenu {
 
     }
 
-    public List<MenuItem> createItreator() {
-        return new DinnerMenuIterator<MenuItem[]>(menuItems);
+    public Iterator createIterator() {
+        return new DinnerMenuIterator<>(menuItems);
     }
 }

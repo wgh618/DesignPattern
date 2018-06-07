@@ -1,5 +1,6 @@
 package com.will.headFirstDesignPattern.iterator;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -11,9 +12,10 @@ import java.util.List;
  * @date 2018年06月05日
  */
 public class PancakeHouseMenu {
-    List<MenuItem> menuItems;
+    private List<MenuItem> menuItems;
 
     public PancakeHouseMenu() {
+        menuItems = new ArrayList<>();
         addItem("K&B's Pancake Breakfast","",true,2.99);
         addItem("Regular Pancake Breakfast","",false,2.99);
         addItem("Blueberry Pancakes","",true,3.49);
@@ -25,7 +27,7 @@ public class PancakeHouseMenu {
         menuItems.add(menuItem);
     }
 
-    public List<MenuItem> getMenuItems() {
-        return menuItems;
+    public Iterator createIterator() {
+        return new PancakeHouseMenuIterator<>(menuItems);
     }
 }

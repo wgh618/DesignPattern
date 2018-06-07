@@ -1,5 +1,7 @@
 package com.will.headFirstDesignPattern.iterator;
 
+import java.util.List;
+
 /**
  * ClassName:DinnerMenuIterator
  * Description:
@@ -8,26 +10,21 @@ package com.will.headFirstDesignPattern.iterator;
  * @email willwu618@gmail.com
  * @date 2018年06月06日
  */
-public class DinnerMenuIterator<T> implements Iterator {
-    private T[] menuItems;
+public class PancakeHouseMenuIterator<T> implements Iterator {
+    private List<T> menuItems;
     private int position;
 
-    public DinnerMenuIterator(T[] menuItems) {
+    public PancakeHouseMenuIterator(List<T> menuItems) {
         this.menuItems = menuItems;
     }
 
     @Override
     public boolean hasNext() {
-        if (position >= menuItems.length || menuItems[position] == null) {
-            return false;
-        } else {
-            return true;
-        }
+        return position != menuItems.size();
     }
 
     @Override
     public T next() {
-        T T = menuItems[position ++];
-        return T;
+        return menuItems.get(position ++);
     }
 }
