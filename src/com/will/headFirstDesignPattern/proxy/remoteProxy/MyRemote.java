@@ -1,4 +1,4 @@
-package com.will.headFirstDesignPattern.proxy.demo1;
+package com.will.headFirstDesignPattern.proxy.remoteProxy;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
