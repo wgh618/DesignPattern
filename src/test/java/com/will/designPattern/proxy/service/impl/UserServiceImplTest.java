@@ -1,5 +1,6 @@
 package com.will.designPattern.proxy.service.impl;
 
+import com.will.designPattern.proxy.TransactionProxy;
 import com.will.designPattern.proxy.domain.User;
 import com.will.designPattern.proxy.dynamic.CglibTransactionHandler;
 import com.will.designPattern.proxy.dynamic.JdkTransactionHandler;
@@ -21,11 +22,13 @@ public class UserServiceImplTest {
     private UserService userService;
     private JdkTransactionHandler jdkTransactionHandler;
     private CglibTransactionHandler cglibTransactionHandler;
+    private TransactionProxy transactionProxy;
 
     @Before
     public void setUp() throws Exception {
         this.jdkTransactionHandler = new JdkTransactionHandler();
         this.cglibTransactionHandler = new CglibTransactionHandler();
+        this.transactionProxy = new TransactionProxy(new UserServiceImpl());
 
         // 代理对象与目标对象实现了同样的接口
         this.userService = (UserService) this.jdkTransactionHandler.createProxyInstance(new UserServiceImpl());
@@ -37,7 +40,7 @@ public class UserServiceImplTest {
         user.setId(1000);
         user.setName("will");
         user.setPassword("admin");
-        this.userService.addUser(user);
+        this.transactionProxy.addUser(user);
     }
 
     @Test
